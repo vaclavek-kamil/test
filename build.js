@@ -33,6 +33,7 @@ const runCommand = (command) => {
     const output = execSync(command, { stdio: "inherit" });
     return output.toString();
   } catch (error) {
+    console.log(error);
     console.error(`Error executing command: ${command}`);
     process.exit(1);
   }
