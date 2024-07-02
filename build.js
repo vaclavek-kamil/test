@@ -32,7 +32,7 @@ const runCommand = (command) => {
   try {
     const output = execSync(command, { stdio: "inherit" });
     console.log("output: ", output);
-    return output.toString();
+    return output ? output.toString() : undefined;
   } catch (error) {
     console.log(error);
     console.error(`Error executing command: ${command}`);
