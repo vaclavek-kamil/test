@@ -31,6 +31,7 @@ const argv = yargs(hideBin(process.argv))
 const runCommand = (command) => {
   try {
     const output = execSync(command, { stdio: "inherit" });
+    console.log("output: ", output);
     return output.toString();
   } catch (error) {
     console.log(error);
